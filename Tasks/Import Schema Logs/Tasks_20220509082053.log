@@ -1,0 +1,87 @@
+2022/05/09 22:20:53	This log contains information about the import schema operation into project 'Tasks' on computer 'FORTUNEMBULAZI' by user 'LENOVO T440'.
+2022/05/09 22:20:53	Import of database schema has started.
+2022/05/09 22:21:01	Gathering database credentials
+2022/05/09 22:21:02	Gathering database options
+2022/05/09 22:21:02	Gathering generic database scoped configuration option
+2022/05/09 22:21:02	Gathering users
+2022/05/09 22:21:02	Gathering roles
+2022/05/09 22:21:02	Gathering application roles
+2022/05/09 22:21:02	Gathering role memberships
+2022/05/09 22:21:02	Gathering filegroups
+2022/05/09 22:21:02	Gathering files
+2022/05/09 22:21:02	Gathering full-text catalogs
+2022/05/09 22:21:02	Gathering assemblies
+2022/05/09 22:21:02	Gathering certificates
+2022/05/09 22:21:02	Gathering asymmetric keys
+2022/05/09 22:21:02	Gathering symmetric keys
+2022/05/09 22:21:02	Gathering encrypted symmetric keys
+2022/05/09 22:21:02	Gathering database encryption keys
+2022/05/09 22:21:02	Gathering schemas
+2022/05/09 22:21:02	Gathering XML schema collections
+2022/05/09 22:21:02	Gathering user-defined data types
+2022/05/09 22:21:02	Gathering user-defined types
+2022/05/09 22:21:02	Gathering table types
+2022/05/09 22:21:02	Gathering unique keys for table types
+2022/05/09 22:21:02	Gathering primary keys for table types
+2022/05/09 22:21:09	Gathering indexes for table types
+2022/05/09 22:21:09	Gathering check constraints for table types
+2022/05/09 22:21:09	Gathering default constraints for table types
+2022/05/09 22:21:09	Gathering partition functions
+2022/05/09 22:21:09	Gathering partition schemes
+2022/05/09 22:21:09	Gathering functions
+2022/05/09 22:21:09	Gathering encrypted functions
+2022/05/09 22:21:09	Gathering aggregates
+2022/05/09 22:21:10	Gathering procedures
+2022/05/09 22:21:10	Gathering encrypted procedures
+2022/05/09 22:21:10	Gathering tables
+2022/05/09 22:21:10	Gathering primary keys
+2022/05/09 22:21:10	Gathering unique constraints
+2022/05/09 22:21:10	Gathering foreign keys
+2022/05/09 22:21:10	Gathering default constraints
+2022/05/09 22:21:10	Gathering check constraints
+2022/05/09 22:21:10	Gathering views
+2022/05/09 22:21:10	Gathering encrypted views
+2022/05/09 22:21:10	Gathering indexes
+2022/05/09 22:21:10	Gathering statistics
+2022/05/09 22:21:10	Gathering full-text index stoplists
+2022/05/09 22:21:10	Gathering search property lists
+2022/05/09 22:21:10	Gathering search properties
+2022/05/09 22:21:10	Gathering full-text indexes
+2022/05/09 22:21:10	Gathering column store indexes
+2022/05/09 22:21:10	Gathering spatial indexes
+2022/05/09 22:21:11	Gathering XML indexes
+2022/05/09 22:21:11	Gathering Selective XML indexes
+2022/05/09 22:21:11	Gathering encrypted triggers
+2022/05/09 22:21:11	Gathering triggers
+2022/05/09 22:21:11	Gathering encrypted and clr ddl triggers
+2022/05/09 22:21:11	Gathering ddl triggers
+2022/05/09 22:21:11	Creating edge constraints
+2022/05/09 22:21:11	Gathering synonyms
+2022/05/09 22:21:11	Gathering defaults
+2022/05/09 22:21:11	Gathering data constraint uddt bindings
+2022/05/09 22:21:11	Gathering rules
+2022/05/09 22:21:11	Gathering data constraint uddt bindings
+2022/05/09 22:21:11	Gathering message types
+2022/05/09 22:21:11	Gathering queues
+2022/05/09 22:21:11	Gathering contracts
+2022/05/09 22:21:11	Gathering services
+2022/05/09 22:21:11	Gathering routes
+2022/05/09 22:21:11	Gathering event notifications
+2022/05/09 22:21:11	Gathering remote service bindings
+2022/05/09 22:21:11	Gathering broker priorities
+2022/05/09 22:21:11	Gathering database audit specifications
+2022/05/09 22:21:11	Gathering signatures
+2022/05/09 22:21:11	Gathering data compression options
+2022/05/09 22:21:11	Gathering sequence types
+2022/05/09 22:21:11	Gathering security policies
+2022/05/09 22:21:11	Gather column encryption keys
+2022/05/09 22:21:11	Gathering column master keys
+2022/05/09 22:21:11	Gathering external data sources
+2022/05/09 22:21:11	Gathering external file formats
+2022/05/09 22:21:11	Gathering external tables
+2022/05/09 22:21:11	Gathering extended properties
+2022/05/09 22:21:13	Scanning project for duplicate elements
+2022/05/09 22:21:13	Finished duplicate element processing
+2022/05/09 22:21:13	Finished importing database.
+2022/05/09 22:21:13	A summary of the import was saved to the following location: C:\Users\LENOVO T440\source\repos\Tasks\Tasks\Import Schema Logs\Tasks_20220509082053.log
+2022/05/09 22:21:13	Click Finish to continue...
