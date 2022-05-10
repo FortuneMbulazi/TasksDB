@@ -117,14 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="dbo_CreatePersonTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="CreatePersonTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.CreatePerson
 DECLARE @Name AS NVARCHAR (50) = 'Fortune',
 		@Surname AS NVARCHAR (50) = 'Mbulazi',
 		@Age AS INT = 26,
 		@Email AS NVARCHAR (200) = 'fortune@gmail.com';
 
-EXECUTE [dbo].[CreatePerson] @Name = @Name, @Surname = @Surname, @Age = @Age, @Email = @Email;</value>
+EXECUTE [dbo].[CreatePerson]	@Name = @Name,
+								@Surname = @Surname,
+								@Age = @Age,
+								@Email = @Email;</value>
+  </data>
+  <data name="ExistingEmailWillFailToCreateUser_TestAction.SqlScript" xml:space="preserve">
+    <value>--This test proves that attempting to register a user with an existing email will fail.
+
+DECLARE @Name AS NVARCHAR (50) = 'Fortune',
+		@Surname AS NVARCHAR (50) = 'Mbulazi',
+		@Age AS INT = 26,
+		@Email AS NVARCHAR (200) = 'fortune@gmail.com';
+
+EXECUTE [dbo].[CreatePerson]	@Name = @Name,
+								@Surname = @Surname,
+								@Age = @Age,
+								@Email = @Email;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

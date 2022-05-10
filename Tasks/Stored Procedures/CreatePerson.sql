@@ -25,7 +25,7 @@ BEGIN
 			VALUES(@Name, @Surname, @Age, @Email);
 
 			SELECT 'User successfully created' AS ErrorMessage,
-					@StatusCode AS StatusCode;
+					1 AS StatusCode;
 		END
 	END TRY
 	BEGIN CATCH

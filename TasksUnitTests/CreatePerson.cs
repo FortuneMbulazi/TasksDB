@@ -37,20 +37,56 @@ namespace TasksUnitTests
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_CreatePersonTest_TestAction;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction CreatePersonTest_TestAction;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePerson));
-            this.dbo_CreatePersonTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-            dbo_CreatePersonTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition CountNumberOfRows;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction ExistingEmailWillFailToCreateUser_TestAction;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition1;
+            this.CreatePersonTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+            this.ExistingEmailWillFailToCreateUserData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+            CreatePersonTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            CountNumberOfRows = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
+            ExistingEmailWillFailToCreateUser_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            scalarValueCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
             // 
-            // dbo_CreatePersonTest_TestAction
+            // CreatePersonTest_TestAction
             // 
-            resources.ApplyResources(dbo_CreatePersonTest_TestAction, "dbo_CreatePersonTest_TestAction");
+            CreatePersonTest_TestAction.Conditions.Add(CountNumberOfRows);
+            resources.ApplyResources(CreatePersonTest_TestAction, "CreatePersonTest_TestAction");
             // 
-            // dbo_CreatePersonTestData
+            // CreatePersonTestData
             // 
-            this.dbo_CreatePersonTestData.PosttestAction = null;
-            this.dbo_CreatePersonTestData.PretestAction = null;
-            this.dbo_CreatePersonTestData.TestAction = dbo_CreatePersonTest_TestAction;
+            this.CreatePersonTestData.PosttestAction = null;
+            this.CreatePersonTestData.PretestAction = null;
+            this.CreatePersonTestData.TestAction = CreatePersonTest_TestAction;
+            // 
+            // CountNumberOfRows
+            // 
+            CountNumberOfRows.Enabled = true;
+            CountNumberOfRows.Name = "CountNumberOfRows";
+            CountNumberOfRows.ResultSet = 1;
+            CountNumberOfRows.RowCount = 1;
+            // 
+            // ExistingEmailWillFailToCreateUserData
+            // 
+            this.ExistingEmailWillFailToCreateUserData.PosttestAction = null;
+            this.ExistingEmailWillFailToCreateUserData.PretestAction = null;
+            this.ExistingEmailWillFailToCreateUserData.TestAction = ExistingEmailWillFailToCreateUser_TestAction;
+            // 
+            // ExistingEmailWillFailToCreateUser_TestAction
+            // 
+            ExistingEmailWillFailToCreateUser_TestAction.Conditions.Add(scalarValueCondition1);
+            resources.ApplyResources(ExistingEmailWillFailToCreateUser_TestAction, "ExistingEmailWillFailToCreateUser_TestAction");
+            // 
+            // scalarValueCondition1
+            // 
+            scalarValueCondition1.ColumnNumber = 1;
+            scalarValueCondition1.Enabled = true;
+            scalarValueCondition1.ExpectedValue = "Email already in use";
+            scalarValueCondition1.Name = "scalarValueCondition1";
+            scalarValueCondition1.NullExpected = false;
+            scalarValueCondition1.ResultSet = 1;
+            scalarValueCondition1.RowNumber = 1;
         }
 
         #endregion
@@ -71,9 +107,9 @@ namespace TasksUnitTests
         #endregion
 
         [TestMethod()]
-        public void dbo_CreatePersonTest()
+        public void CreatePersonTest()
         {
-            SqlDatabaseTestActions testActions = this.dbo_CreatePersonTestData;
+            SqlDatabaseTestActions testActions = this.CreatePersonTestData;
             // Execute the pre-test script
             // 
             System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
@@ -93,6 +129,31 @@ namespace TasksUnitTests
                 SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
             }
         }
-        private SqlDatabaseTestActions dbo_CreatePersonTestData;
+        [TestMethod()]
+        public void ExistingEmailWillFailToCreateUser()
+        {
+            SqlDatabaseTestActions testActions = this.ExistingEmailWillFailToCreateUserData;
+            // Execute the pre-test script
+            // 
+            System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+            SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+            try
+            {
+                // Execute the test script
+                // 
+                System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+                SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+            }
+            finally
+            {
+                // Execute the post-test script
+                // 
+                System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+                SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+            }
+        }
+
+        private SqlDatabaseTestActions CreatePersonTestData;
+        private SqlDatabaseTestActions ExistingEmailWillFailToCreateUserData;
     }
 }
