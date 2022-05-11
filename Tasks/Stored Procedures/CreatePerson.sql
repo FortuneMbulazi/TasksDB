@@ -11,25 +11,28 @@ CREATE PROCEDURE [dbo].[CreatePerson]
 AS
 BEGIN
 	DECLARE @StatusCode INT = 0;
+
 	BEGIN TRY
 		IF EXISTS(SELECT email FROM [dbo].[Person] WHERE email = @Email)
 		BEGIN
-			SELECT 'Email already in use' AS ErrorMessage,
+			SELECT 'Email already in use' AS ResponseMessage,
 					@StatusCode AS StatusCode;
 			RETURN
 		END
 
 		IF(@Name IS NOT NULL AND @Email IS NOT NULL)
 		BEGIN
-			INSERT INTO [dbo].[Person]([Name], Surname, Age, email)
-			VALUES(@Name, @Surname, @Age, @Email);
+			SET @StatusCode = 1;
 
-			SELECT 'User successfully created' AS ErrorMessage,
-					1 AS StatusCode;
+			INSERT INTO [dbo].[Person]([Name], Surname, Age, email, CreatedOn)
+			VALUES(@Name, @Surname, @Age, @Email, GETDATE());
+
+			SELECT 'User successfully created' AS ResponseMessage,
+					@StatusCode AS StatusCode;
 		END
 	END TRY
 	BEGIN CATCH
-		SELECT	@@ERROR AS ErrorMessage,
+		SELECT	@@ERROR AS ResponseMessage,
 				@StatusCode AS StatusCode;
 	END CATCH
 END

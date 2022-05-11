@@ -60,6 +60,9 @@
     <Compile Include="CreatePerson.cs">
       <SubType>Designer</SubType>
     </Compile>
+    <Compile Include="GetTaskByPersonId.cs">
+      <SubType>Designer</SubType>
+    </Compile>
     <Compile Include="SqlDatabaseSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CreatePerson.resx">
       <DependentUpon>CreatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetTaskByPersonId.resx">
+      <DependentUpon>GetTaskByPersonId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
