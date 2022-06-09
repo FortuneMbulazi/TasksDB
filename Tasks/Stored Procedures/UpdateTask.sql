@@ -1,10 +1,14 @@
 ﻿-- =============================================
 -- Author:		Simphiwe Mabaso
 -- Create date: 08 May 2022
--- Description:	When called this stored procedure create a task.
+-- Description:	When called this stored procedure updates the task.
 -- =============================================
-CREATE   PROCEDURE UpdateTask
+CREATE PROCEDURE [dbo].[UpdateTask]
+	@TaskID BIGINT,
+	@Task NVARCHAR(MAX)
 AS
 BEGIN
-	SELECT 'Hello there...';
+	UPDATE Tasks
+	SET Task = @Task
+	WHERE TaskId = @TaskID;
 END
